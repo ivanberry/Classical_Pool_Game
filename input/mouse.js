@@ -8,6 +8,7 @@ function handleMouseMove(evt) {
 }
 
 function handleMouseDown(evt) {
+
   handleMouseMove(evt);
 
   if (evt.which === 1) {
@@ -26,7 +27,6 @@ function handleMouseDown(evt) {
       Mouse.right.down = true;
     }
   }
-
 }
 
 function handleMouseUp(evt) {
@@ -55,10 +55,9 @@ function MouseHandler() {
 }
 
 MouseHandler.prototype.reset = function() {
-  this.left = false;
-  this.middle = false;
-  this.right = false;
-  this.pressed = false;
+  this.left.pressed = false;
+  this.middle.pressed = false;
+  this.right.pressed = false;
 }
 
 
