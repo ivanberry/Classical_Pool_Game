@@ -7,7 +7,7 @@ GameWorld.prototype.update = function () {
 }
 
 GameWorld.prototype.draw = function () {
-  canvas.drawImage(sprites.background, { x: 0, y: 0 });
+  canvas.drawImage(sprites.background, { x: 0, y: 0 }, { x: 0, y: 0 });
   this.stick.draw();
 }
 

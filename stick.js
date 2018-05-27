@@ -1,17 +1,12 @@
 function Stick() {
-  this.position = { x: 0, y: 400 };
+  this.position = new Vector2(400, 400);
+  this.origin = new Vector2(500, 10);
 }
 
-Stick.prototype.update = function() {
+Stick.prototype.update = function () {
 
-  //Testing
-  this.position = Mouse.position;
-
-  if (Mouse.left.pressed) {
-    console.log('Left Pressed');
-  }
 }
 
-Stick.prototype.draw = function() {
-  canvas.drawImage(sprites.stick, this.position);
+Stick.prototype.draw = function () {
+  canvas.drawImage(sprites.stick, this.position, this.origin); //draw the stick on canvas
 }
