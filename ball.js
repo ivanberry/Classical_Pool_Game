@@ -2,12 +2,20 @@ const BALL_ORIGIN = new Vector2(25,25);
 
 function Ball(position) {
   this.position = position;
+  this.velocity = new Vector2();
 }
 
-Ball.prototype.update = function () {
+Ball.prototype.update = function (delta) {
+  this.position.addTo(this.velocity.mult(delta)); //position change
 
+  this.velocity = this.velocity.mult(0.98);
+  console.log(this.velocity); //decrease
 }
 
 Ball.prototype.draw = function () {
   canvas.drawImage(sprites.whiteBall, this.position, BALL_ORIGIN);
+}
+
+Ball.prototype.shoot = function(power, rotation) {
+  this.velocity = new Vector2( power* Math.cos(rotation),  power * Math.sin(rotation));
 }
