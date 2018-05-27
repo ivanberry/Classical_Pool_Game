@@ -2,7 +2,6 @@ function handleMouseMove(evt) {
   this.x = evt.pageX;
   this.y = evt.pageY;
 
-
   Mouse.position = new Vector2(this.x, this.y)
 
 }
